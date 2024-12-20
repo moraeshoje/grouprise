@@ -4,5 +4,5 @@ VERSION=recommended
 MEMORY=512
 AUTORESTART=true
 DESCRIPTION=Servidor de webhook para o bot
-START=python main.py
+START=gunicorn -b 0.0.0.0:5000 main:app
 SUBDOMAIN=grouprise
