@@ -4,5 +4,5 @@ VERSION=recommended
 MEMORY=512
 AUTORESTART=true
 DESCRIPTION=Servidor de webhook para o bot
-START=main.py
+START=python main.py
 SUBDOMAIN=grouprise
