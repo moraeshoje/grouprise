@@ -1,17 +1,19 @@
-from flask import Flask, request
-import os
+from flask import Flask
 
+# Create a Flask application instance
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
-    # Recebe a atualização do Telegram
-    data = request.json
-    print(data)  # Aqui você pode processar os dados recebidos, como responder a mensagens
+# Define a route for the root URL (/) that returns 'Hello, World!'
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
 
-    # Aqui você pode adicionar a lógica para processar o webhook e enviar respostas ao Telegram
-    return "OK", 200
-
+# If this script is executed directly (not imported as a module)
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
-  
+    from waitress import serve  # Import serve function from Waitress
+    
+    # Serve the Flask application using Waitress on host 0.0.0.0 (all interfaces) and port 80
+    serve(app, host='0.0.0.0', port=80)
+    
+    # Print a message to indicate successful server start on port 80
+    print("Server successfully started on port 80.")
