@@ -1,5 +1,5 @@
 DISPLAY_NAME=Webhook Bot
-MAIN=app.py
+MAIN=main.py
 VERSION=recommended
 MEMORY=512
 AUTORESTART=true
